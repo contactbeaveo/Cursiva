@@ -16,6 +16,8 @@ export function ContactPage() {
   const [captchaAnswer, setCaptchaAnswer] = useState('');
   const [captchaQuestion, setCaptchaQuestion] = useState({ num1: 0, num2: 0, answer: 0 });
   const [captchaError, setCaptchaError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   // Generate a new captcha question
   const generateCaptcha = () => {
@@ -40,21 +42,43 @@ export function ContactPage() {
       return;
     }
     
-    // In a real application, this would send the data to a backend
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: 'site-web',
-        budget: '1000-3000',
-        message: '',
+    // Send email via PHP backend
+    setIsSubmitting(true);
+    setSubmitError('');
+    
+    fetch('/send-email.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setIsSubmitting(false);
+        if (data.success) {
+          setIsSubmitted(true);
+          setTimeout(() => {
+            setIsSubmitted(false);
+            setFormData({
+              name: '',
+              email: '',
+              phone: '',
+              service: 'site-web',
+              budget: '1000-3000',
+              message: '',
+            });
+            generateCaptcha();
+          }, 5000);
+        } else {
+          setSubmitError(data.message || 'Erreur lors de l\'envoi. Veuillez réessayer.');
+        }
+      })
+      .catch((error) => {
+        setIsSubmitting(false);
+        console.error('Error:', error);
+        setSubmitError('Erreur de connexion. Veuillez vérifier votre connexion internet.');
       });
-      generateCaptcha(); // Generate new captcha after submission
-    }, 3000);
   };
 
   const handleChange = (
@@ -75,7 +99,7 @@ export function ContactPage() {
     {
       icon: <Phone size={24} />,
       title: 'Téléphone',
-      details: ['+1 (418) 123-4567', 'Lun-Ven : 9h-18h'],
+      details: ['+1 (581) 446-7277', 'Lun-Ven : 9h-18h'],
     },
     {
       icon: <MapPin size={24} />,
@@ -249,7 +273,7 @@ export function ContactPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 glass-light border border-white/10 rounded-xl focus:border-cyan-400 focus:outline-none text-white placeholder-gray-500"
-                        placeholder="+1 (418) 123-4567"
+                        placeholder="+1 (581) 446-7277"
                       />
                     </div>
 
@@ -263,7 +287,7 @@ export function ContactPage() {
                         value={formData.service}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 glass-light border border-white/10 rounded-xl focus:border-cyan-400 focus:outline-none text-white"
+                        className="w-full px-4 py-3 glass-light border border-white/10 rounded-xl focus:border-cyan-400 focus:outline-none text-white [&>option]:bg-gray-800 [&>option]:text-white"
                       >
                         <option value="site-web">Site web WordPress</option>
                         <option value="ecommerce">Boutique WooCommerce</option>
@@ -284,7 +308,7 @@ export function ContactPage() {
                         value={formData.budget}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 glass-light border border-white/10 rounded-xl focus:border-cyan-400 focus:outline-none text-white"
+                        className="w-full px-4 py-3 glass-light border border-white/10 rounded-xl focus:border-cyan-400 focus:outline-none text-white [&>option]:bg-gray-800 [&>option]:text-white"
                       >
                         <option value="500-1000">500$ - 1 000$</option>
                         <option value="1000-3000">1 000$ - 3 000$</option>
@@ -347,13 +371,31 @@ export function ContactPage() {
                       )}
                     </div>
 
+                    {submitError && (
+                      <div className="glass-light border border-red-400/40 text-red-300 p-4 rounded-xl">
+                        <p className="text-sm flex items-center gap-2">
+                          ⚠️ {submitError}
+                        </p>
+                      </div>
+                    )}
+
                     <button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white px-8 py-4 rounded-xl hover:from-orange-600 hover:to-amber-600 transition-all flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 group"
+                      disabled={isSubmitting}
+                      className="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white px-8 py-4 rounded-xl hover:from-orange-600 hover:to-amber-600 transition-all flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
-                      <Rocket className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                      Envoyer le message
-                      <Send size={20} />
+                      {isSubmitting ? (
+                        <>
+                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                          Envoi en cours...
+                        </>
+                      ) : (
+                        <>
+                          <Rocket className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                          Envoyer le message
+                          <Send size={20} />
+                        </>
+                      )}
                     </button>
 
                     <p className="text-gray-500 text-sm text-center">

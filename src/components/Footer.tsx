@@ -63,7 +63,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2 text-gray-400 hover:text-orange-400 transition-colors group">
                 <Phone size={18} className="group-hover:scale-110 transition-transform" />
-                <span>+1 (418) 123-4567</span>
+                <span>+1 (581) 446-7277</span>
               </li>
               <li className="flex items-center gap-2 text-gray-400">
                 <MapPin size={18} />
