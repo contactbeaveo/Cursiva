@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, Rocket, CheckCircle, Shield } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useSEO } from '../hooks/useSEO';
 
 export function ContactPage() {
+  useSEO({
+    title: 'Contactez Cursiva – Devis gratuit site web Québec sous 24h',
+    description: 'Contactez notre agence web au Québec pour un devis gratuit sous 24h. Création de site web, boutique en ligne, design graphique. Réponse rapide garantie.',
+    canonical: 'https://cursiva.ca/contact',
+  });
   const [formData, setFormData] = useState({
     name: '',
     email: '',

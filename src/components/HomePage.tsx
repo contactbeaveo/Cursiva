@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { useSEO } from '../hooks/useSEO';
 import { 
   ArrowRight, 
   CheckCircle, 
@@ -25,6 +26,39 @@ import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function HomePage() {
+  useSEO({
+    title: 'Cursiva – Agence Web & Design Graphique au Québec',
+    description: 'Agence web québécoise spécialisée en création de sites web professionnels et design graphique. Devis gratuit sous 24h. Sites vitrine, boutiques en ligne, logos. Tarifs de 300$ à 6000$ CAD.',
+    canonical: 'https://cursiva.ca/',
+  });
+
+  const portfolio = [
+    {
+      title: 'Boutique Élégance',
+      category: 'E-commerce',
+      description: 'Boutique en ligne WordPress + WooCommerce avec paiement sécurisé et gestion des stocks.',
+      color: 'from-cyan-500 to-blue-500',
+      tags: ['WooCommerce', 'SEO', 'Design'],
+      result: '+200% de ventes',
+    },
+    {
+      title: 'Cabinet Juridique Gagnon',
+      category: 'Site vitrine',
+      description: 'Site professionnel 5 pages pour cabinet d\'avocats avec formulaire de prise de rendez-vous.',
+      color: 'from-purple-500 to-pink-500',
+      tags: ['WordPress', 'SEO', '5 pages'],
+      result: 'Page 1 Google',
+    },
+    {
+      title: 'Restaurant Le Jardin',
+      category: 'Site + Réservation',
+      description: 'Site avec menu en ligne, galerie photos et système de réservation intégré.',
+      color: 'from-orange-500 to-amber-500',
+      tags: ['Réservation', 'Galerie', 'Mobile'],
+      result: '+150% réservations',
+    },
+  ];
+
   const mainServices = [
     {
       icon: <Globe className="w-6 h-6" />,
@@ -414,6 +448,94 @@ export function HomePage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent" />
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <motion.div
+              initial={{ scale: 0.9 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-block glass-light px-4 py-2 rounded-full mb-4 border border-cyan-400/30"
+            >
+              <span className="text-cyan-400 text-sm">🎨 Nos réalisations</span>
+            </motion.div>
+            <h2 className="mb-4 text-white">Projets réalisés pour nos clients</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+              Des sites web et designs qui génèrent de vrais résultats pour les entreprises québécoises
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {portfolio.map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ y: -8 }}
+                className="glass rounded-3xl overflow-hidden border border-white/10 hover:border-white/20 group transition-all"
+              >
+                {/* Image placeholder colorée */}
+                <div className={`h-48 bg-gradient-to-br ${project.color} relative overflow-hidden`}>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-white/30 text-7xl font-bold">{project.title[0]}</div>
+                  </div>
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors" />
+                  <div className="absolute bottom-4 left-4">
+                    <span className="bg-white/20 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full border border-white/20">
+                      {project.category}
+                    </span>
+                  </div>
+                  <div className="absolute top-4 right-4">
+                    <span className={`bg-gradient-to-r ${project.color} text-white text-xs px-3 py-1 rounded-full font-semibold shadow-lg`}>
+                      {project.result}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-6">
+                  <h3 className="text-white mb-2">{project.title}</h3>
+                  <p className="text-gray-400 text-sm mb-4 leading-relaxed">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, i) => (
+                      <span key={i} className="text-xs text-cyan-400 bg-cyan-400/10 border border-cyan-400/20 px-2 py-1 rounded-lg">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-center mt-12"
+          >
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 glass-strong px-8 py-4 rounded-xl text-orange-300 hover:text-white border border-orange-400/40 hover:border-orange-400/60 transition-all hover:scale-105 shadow-lg shadow-orange-500/10"
+            >
+              <Rocket className="w-5 h-5" />
+              Démarrer votre projet
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 

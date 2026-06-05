@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
+import { useSEO } from '../hooks/useSEO';
 import {
   Globe,
   Palette,
@@ -21,6 +22,11 @@ import {
 } from 'lucide-react';
 
 export function ServicesPage() {
+  useSEO({
+    title: 'Nos services web et design – Cursiva | Agence web Québec',
+    description: 'Création de sites web, boutiques en ligne, design graphique, SEO et maintenance. Tous nos services web pour entreprises québécoises. Devis gratuit sous 24h.',
+    canonical: 'https://cursiva.ca/services',
+  });
   const [activeTab, setActiveTab] = useState<'web' | 'design'>('web');
 
   const webServices = [

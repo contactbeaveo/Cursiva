@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { useSEO } from '../hooks/useSEO';
 import { Target, Heart, Award, Users, Zap, Shield, ArrowRight, Rocket, Code, Palette } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { motion } from 'motion/react';
 
 export function AboutPage() {
+  useSEO({
+    title: 'À propos de Cursiva – Agence web au Québec | Notre équipe',
+    description: 'Découvrez Cursiva, agence web québécoise fondée par des experts en développement web et design graphique. 5+ ans d\'expérience, 100+ projets réalisés au Québec.',
+    canonical: 'https://cursiva.ca/a-propos',
+  });
   const values = [
     {
       icon: <Target className="w-6 h-6" />,

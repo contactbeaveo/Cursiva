@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router';
 import { Check, ArrowRight, Sparkles, Rocket, Crown, Code, Palette } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useSEO } from '../hooks/useSEO';
 
 export function PricingPage() {
+  useSEO({
+    title: 'Tarifs création site web Québec – Cursiva | 300$ à 6000$ CAD',
+    description: 'Tarifs transparents pour création de site web et design graphique au Québec. Sites vitrine de 300$, boutiques en ligne, logos. Devis gratuit personnalisé sous 24h.',
+    canonical: 'https://cursiva.ca/tarifs',
+  });
   const [activeTab, setActiveTab] = useState<'web' | 'design'>('web');
 
   const webPricing = [

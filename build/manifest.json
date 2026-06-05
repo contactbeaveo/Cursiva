@@ -1,0 +1,27 @@
+{
+  "name": "Cursiva - Agence Web & Design Graphique au Québec",
+  "short_name": "Cursiva",
+  "description": "Agence web spécialisée en création de sites web professionnels et design graphique au Québec. WordPress ou solutions sur mesure.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0f1e",
+  "theme_color": "#06b6d4",
+  "orientation": "portrait-primary",
+  "lang": "fr-CA",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["business", "productivity", "design"],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
