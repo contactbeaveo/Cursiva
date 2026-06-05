@@ -13,7 +13,6 @@ import { ComplaintsPolicyPage } from './components/ComplaintsPolicyPage';
 import { CookieBanner } from './components/CookieBanner';
 import { StructuredData } from './components/StructuredData';
 import { NotFoundPage } from './components/NotFoundPage';
-import { DevisPopup } from './components/DevisPopup';
 
 export default function App() {
   return (
@@ -36,7 +35,6 @@ export default function App() {
         </main>
         <Footer />
         <CookieBanner />
-        <DevisPopup />
       </div>
     </Router>
   );
