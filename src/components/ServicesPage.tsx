@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import {
   Globe,
@@ -26,21 +26,21 @@ export function ServicesPage() {
   const webServices = [
     {
       icon: <Globe className="w-6 h-6" />,
-      title: 'Site WordPress vitrine',
-      description: 'Création de site internet WordPress vitrine professionnel pour présenter votre entreprise, vos services et attirer de nouveaux clients au Québec. Design moderne, responsive et optimisé SEO.',
+      title: 'Site web vitrine',
+      description: 'Création de site internet vitrine professionnel pour présenter votre entreprise, vos services et attirer de nouveaux clients au Québec. Design moderne, responsive et optimisé SEO. Avec ou sans WordPress.',
       features: [
         'Design responsive moderne',
-        'Optimisation SEO Yoast',
+        'Optimisation SEO',
         'Formulaire de contact',
         'Intégration Google Maps',
         'Réseaux sociaux',
-        'Admin WordPress facile',
+        'Interface admin facile',
       ],
     },
     {
       icon: <ShoppingCart className="w-6 h-6" />,
-      title: 'Boutique WooCommerce',
-      description: 'Développement de boutique en ligne complète avec WooCommerce, gestion des produits, paiement sécurisé et interface d\'administration WordPress intuitive pour vendre en ligne.',
+      title: 'Boutique en ligne',
+      description: 'Développement de boutique e-commerce complète, gestion des produits, paiement sécurisé et interface d\'administration intuitive pour vendre en ligne. Solutions WordPress (WooCommerce) ou autres plateformes.',
       features: [
         'Gestion produits illimitée',
         'Paiement sécurisé SSL',
@@ -52,8 +52,8 @@ export function ServicesPage() {
     },
     {
       icon: <Smartphone className="w-6 h-6" />,
-      title: 'Site WordPress responsive',
-      description: 'Sites web WordPress adaptatifs qui s\'affichent parfaitement sur tous les écrans et appareils : ordinateur de bureau, tablette et mobile. Expérience utilisateur optimale.',
+      title: 'Site web responsive',
+      description: 'Sites web adaptatifs qui s\'affichent parfaitement sur tous les écrans et appareils : ordinateur de bureau, tablette et mobile. Expérience utilisateur optimale sur tous supports.',
       features: [
         'Design mobile-first',
         'Adaptatif tous écrans',
@@ -65,10 +65,10 @@ export function ServicesPage() {
     },
     {
       icon: <Search className="w-6 h-6" />,
-      title: 'Optimisation SEO WordPress',
-      description: 'Référencement naturel optimisé avec Yoast SEO Premium pour améliorer votre visibilité sur Google et moteurs de recherche. Attirez plus de trafic qualifié au Québec.',
+      title: 'Optimisation SEO',
+      description: 'Référencement naturel optimisé pour améliorer votre visibilité sur Google et moteurs de recherche. Attirez plus de trafic qualifié au Québec. Compatible avec tous types de sites.',
       features: [
-        'Configuration Yoast SEO',
+        'Configuration SEO avancée',
         'Mots-clés ciblés',
         'Balises meta optimisées',
         'Sitemap XML',
@@ -78,12 +78,12 @@ export function ServicesPage() {
     },
     {
       icon: <Code className="w-6 h-6" />,
-      title: 'Plugins WordPress personnalisés',
-      description: 'Développement de fonctionnalités personnalisées et intégrations de plugins WordPress premium selon vos besoins métier spécifiques. Solutions sur mesure pour votre entreprise.',
+      title: 'Fonctionnalités personnalisées',
+      description: 'Développement de fonctionnalités sur mesure et intégrations selon vos besoins métier spécifiques. Solutions personnalisées pour votre entreprise, WordPress ou autre technologie.',
       features: [
         'Développement sur mesure',
         'Intégrations API',
-        'Plugins premium',
+        'Modules premium',
         'Automatisation processus',
         'Formulaires avancés',
         'Fonctionnalités uniques',
@@ -91,10 +91,10 @@ export function ServicesPage() {
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: 'Performance WordPress',
-      description: 'Sites WordPress ultra-rapides optimisés avec système de cache, compression d\'images et CDN pour offrir la meilleure expérience utilisateur et améliorer votre SEO.',
+      title: 'Performance web',
+      description: 'Sites web ultra-rapides optimisés avec système de cache, compression d\'images et CDN pour offrir la meilleure expérience utilisateur et améliorer votre SEO.',
       features: [
-        'Cache WordPress avancé',
+        'Cache avancé',
         'Compression images',
         'Minification CSS/JS',
         'CDN intégré',
@@ -104,24 +104,24 @@ export function ServicesPage() {
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: 'Hébergement & sécurité WordPress',
-      description: 'Hébergement web WordPress sécurisé au Canada, certificat SSL gratuit, sauvegardes automatiques quotidiennes et protection contre les menaces et attaques DDoS.',
+      title: 'Hébergement & sécurité',
+      description: 'Hébergement web sécurisé au Canada, certificat SSL gratuit, sauvegardes automatiques quotidiennes et protection contre les menaces et attaques DDoS.',
       features: [
         'Hébergement Québec/Canada',
         'Certificat SSL gratuit',
         'Sauvegardes quotidiennes',
         'Protection DDoS',
-        'Firewall WordPress',
+        'Firewall sécurisé',
         'Monitoring 24/7',
       ],
     },
     {
       icon: <Headphones className="w-6 h-6" />,
-      title: 'Maintenance WordPress',
-      description: 'Support technique continu, mises à jour WordPress régulières, correction de bugs et maintenance complète de votre site web pour garantir son bon fonctionnement.',
+      title: 'Maintenance web',
+      description: 'Support technique continu, mises à jour régulières, correction de bugs et maintenance complète de votre site web pour garantir son bon fonctionnement.',
       features: [
-        'Mises à jour WordPress',
-        'Mises à jour plugins/thèmes',
+        'Mises à jour régulières',
+        'Mises à jour plugins/modules',
         'Correction de bugs',
         'Support technique 24h',
         'Optimisation continue',
@@ -216,10 +216,10 @@ export function ServicesPage() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="mb-8 bg-gradient-to-r from-white via-cyan-300 to-purple-300 bg-clip-text text-transparent">
-              Services création site WordPress et design graphique Québec
+              Services création site web et design graphique Québec
             </h1>
             <p className="text-gray-300 max-w-3xl mx-auto mb-8">
-              Agence web spécialisée en développement WordPress et design graphique au Québec. De la création de sites vitrine, boutiques WooCommerce à l'identité visuelle complète, nous vous accompagnons dans tous vos projets digitaux avec expertise et créativité.
+              Agence web spécialisée en développement web et design graphique au Québec. De la création de sites vitrine et boutiques en ligne à l'identité visuelle complète, nous vous accompagnons dans tous vos projets digitaux avec expertise et créativité. WordPress ou solutions sur mesure.
             </p>
             
             {/* Tab Selector */}
@@ -233,7 +233,7 @@ export function ServicesPage() {
                 }`}
               >
                 <Globe className="w-5 h-5" />
-                Sites WordPress
+                Sites web
               </button>
               <button
                 onClick={() => setActiveTab('design')}
@@ -263,12 +263,12 @@ export function ServicesPage() {
           >
             <h2 className="mb-4 text-white">
               {activeTab === 'web' 
-                ? 'Nos services de développement WordPress' 
+                ? 'Nos services de développement web' 
                 : 'Nos services de design graphique et identité visuelle'}
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
               {activeTab === 'web'
-                ? 'Solutions WordPress complètes pour créer votre présence en ligne : sites vitrine, e-commerce WooCommerce, SEO, hébergement et maintenance'
+                ? 'Solutions web complètes pour créer votre présence en ligne : sites vitrine, boutiques e-commerce, SEO, hébergement et maintenance. WordPress ou sur mesure.'
                 : 'Création d\'identité visuelle, logos professionnels et supports de communication print et web pour renforcer votre image de marque'}
             </p>
           </motion.div>
@@ -322,7 +322,7 @@ export function ServicesPage() {
           >
             <h2 className="mb-4 text-white">Pourquoi choisir Cursiva pour vos projets web et design ?</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Agence WordPress et design graphique au Québec combinant expertise technique et créativité
+              Agence web et design graphique au Québec combinant expertise technique et créativité
             </p>
           </motion.div>
           
@@ -331,7 +331,7 @@ export function ServicesPage() {
               {
                 icon: <Rocket className="w-6 h-6" />,
                 title: '100+ projets réalisés',
-                description: 'Sites WordPress et designs graphiques créés pour entreprises québécoises',
+                description: 'Sites web et designs graphiques créés pour entreprises québécoises',
               },
               {
                 icon: <Zap className="w-6 h-6" />,
@@ -384,10 +384,10 @@ export function ServicesPage() {
             
             <div className="relative z-10">
               <h2 className="mb-4 text-white">
-                Prêt à démarrer votre projet WordPress ou design ?
+                Prêt à démarrer votre projet web ou design ?
               </h2>
               <p className="mb-8 text-white/90 max-w-2xl mx-auto">
-                Contactez notre agence web pour discuter de votre projet de site WordPress, boutique WooCommerce ou design graphique. Devis gratuit sous 24h et conseils personnalisés pour entreprises au Québec.
+                Contactez notre agence web pour discuter de votre projet de site web, boutique en ligne ou design graphique. Devis gratuit sous 24h et conseils personnalisés pour entreprises au Québec.
               </p>
               <Link
                 to="/contact"

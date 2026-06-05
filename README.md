@@ -1,7 +1,7 @@
 
-  # Cursiva
+  # Cursiva (copie)
 
-  This is a code bundle for Cursiva. The original project is available at https://www.figma.com/design/ePKCKdNtXWhSH3Wicc2pga/Cursiva.
+  This is a code bundle for Cursiva (copie). The original project is available at https://www.figma.com/design/IrLKAMuJZUR0GTBKahkgmJ/Cursiva--copie-.
 
   ## Running the code
 

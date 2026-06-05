@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Link } from 'react-router';
+import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Star } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -42,14 +42,25 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Policies */}
           <div>
-            <h3 className="mb-4 text-white">Services</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li className="hover:text-cyan-400 transition-colors cursor-pointer">Création de sites web</li>
-              <li className="hover:text-purple-400 transition-colors cursor-pointer">Design graphique</li>
-              <li className="hover:text-pink-400 transition-colors cursor-pointer">Identité visuelle</li>
-              <li className="hover:text-orange-400 transition-colors cursor-pointer">Référencement SEO</li>
+            <h3 className="mb-4 text-white">Politiques</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/politique-confidentialite" className="text-gray-400 hover:text-purple-400 transition-colors">
+                  Confidentialité
+                </Link>
+              </li>
+              <li>
+                <Link to="/politique-temoins" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                  Témoins (cookies)
+                </Link>
+              </li>
+              <li>
+                <Link to="/politique-plaintes" className="text-gray-400 hover:text-orange-400 transition-colors">
+                  Plaintes et règlement
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -59,7 +70,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors group">
                 <Mail size={18} className="group-hover:scale-110 transition-transform" />
-                <span>contact@cursiva.com</span>
+                <span>contact@cursiva.ca</span>
               </li>
               <li className="flex items-center gap-2 text-gray-400 hover:text-orange-400 transition-colors group">
                 <Phone size={18} className="group-hover:scale-110 transition-transform" />
@@ -71,14 +82,17 @@ export function Footer() {
               </li>
             </ul>
             <div className="flex gap-4 mt-4">
-              <a href="#" className="w-10 h-10 glass-light rounded-full flex items-center justify-center text-gray-400 hover:text-blue-400 hover:glass-strong transition-all hover:scale-110">
+              <a href="https://www.facebook.com/cursivaweb" target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass-light rounded-full flex items-center justify-center text-gray-400 hover:text-blue-400 hover:glass-strong transition-all hover:scale-110">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="w-10 h-10 glass-light rounded-full flex items-center justify-center text-gray-400 hover:text-pink-400 hover:glass-strong transition-all hover:scale-110">
+              <a href="https://www.instagram.com/cursivaqc/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass-light rounded-full flex items-center justify-center text-gray-400 hover:text-pink-400 hover:glass-strong transition-all hover:scale-110">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="w-10 h-10 glass-light rounded-full flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:glass-strong transition-all hover:scale-110">
+              <a href="https://www.linkedin.com/company/cursivaqc/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass-light rounded-full flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:glass-strong transition-all hover:scale-110">
                 <Linkedin size={20} />
+              </a>
+              <a href="https://share.google/2Eu5cH8l3BPCqYCgk" target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass-light rounded-full flex items-center justify-center text-gray-400 hover:text-yellow-400 hover:glass-strong transition-all hover:scale-110">
+                <Star size={20} />
               </a>
             </div>
           </div>

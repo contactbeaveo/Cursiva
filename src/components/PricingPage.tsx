@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { Check, ArrowRight, Sparkles, Rocket, Crown, Code, Palette } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -9,15 +9,15 @@ export function PricingPage() {
   const webPricing = [
     {
       name: 'Site 1 page',
-      price: '500$ - 1000$',
+      price: '300$ - 900$ CAD',
       description: 'Idéal pour une landing page ou page de présentation simple',
       features: [
-        '1 page unique WordPress',
+        '1 page unique',
         'Design responsive moderne',
-        'Optimisation SEO avec Yoast',
+        'Optimisation SEO',
         'Formulaire de contact',
         'Intégration réseaux sociaux',
-        'Formation WordPress de base',
+        'Formation de base',
         'Délai : 1 semaine',
       ],
       popular: false,
@@ -25,17 +25,17 @@ export function PricingPage() {
     },
     {
       name: 'Site 1-3 pages',
-      price: '800$ - 3000$',
+      price: '800$ - 3000$ CAD',
       description: 'Parfait pour les petites entreprises et professionnels',
       features: [
-        '1 à 3 pages WordPress',
+        '1 à 3 pages',
         'Design moderne et responsive',
-        'Optimisation SEO avancée (Yoast Premium)',
+        'Optimisation SEO avancée',
         'Formulaires de contact personnalisés',
         'Galerie portfolio / projets',
         'Google Maps et localisation',
         'Hébergement inclus 1 an',
-        'Formation complète WordPress',
+        'Formation complète',
         'Support technique 1 mois',
         'Délai : 2-3 semaines',
       ],
@@ -44,21 +44,21 @@ export function PricingPage() {
     },
     {
       name: 'Site 4-7 pages',
-      price: '3000$ - 6000$',
+      price: '3000$ - 6000$ CAD',
       description: 'Solution complète pour une présence web professionnelle',
       features: [
-        '4 à 7 pages WordPress',
+        '4 à 7 pages',
         'Design premium personnalisé',
-        'SEO complet avec Yoast Premium',
-        'Blog WordPress intégré',
+        'SEO complet',
+        'Blog intégré',
         'Espace actualités dynamique',
         'Formulaires multiples avancés',
         'Animations et interactions',
-        'Tableau de bord WordPress optimisé',
-        'Plugins WordPress premium',
+        'Tableau de bord optimisé',
+        'Modules premium',
         'Hébergement inclus 1 an',
         'Support technique 3 mois',
-        'Formation WordPress approfondie',
+        'Formation approfondie',
         'Délai : 4-6 semaines',
       ],
       popular: false,
@@ -67,19 +67,19 @@ export function PricingPage() {
     {
       name: 'Projet sur mesure',
       price: 'Sur devis',
-      description: 'Solution WordPress personnalisée pour vos besoins spécifiques',
+      description: 'Solution personnalisée pour vos besoins spécifiques',
       features: [
         'Nombre de pages illimité',
-        'E-commerce WooCommerce complet',
-        'Plugins WordPress personnalisés',
+        'E-commerce complet',
+        'Fonctionnalités personnalisées',
         'Espace membre / connexion',
         'Intégrations API externes',
         'Système de réservation',
         'Paiement en ligne sécurisé',
         'Base de données avancée',
-        'Multilingue (WPML)',
+        'Multilingue',
         'Support premium prioritaire',
-        'Maintenance WordPress incluse',
+        'Maintenance incluse',
         'Délai : selon projet',
       ],
       popular: false,
@@ -90,7 +90,7 @@ export function PricingPage() {
   const designPricing = [
     {
       name: 'Logo simple',
-      price: '300$ - 600$',
+      price: '300$ - 600$ CAD',
       description: 'Logo professionnel pour votre entreprise',
       features: [
         '3 propositions de logo',
@@ -106,7 +106,7 @@ export function PricingPage() {
     },
     {
       name: 'Identité visuelle',
-      price: '800$ - 1500$',
+      price: '800$ - 1500$ CAD',
       description: 'Identité complète pour votre marque',
       features: [
         'Logo professionnel',
@@ -125,7 +125,7 @@ export function PricingPage() {
     },
     {
       name: 'Pack communication',
-      price: '1500$ - 3000$',
+      price: '1500$ - 3000$ CAD',
       description: 'Pack complet pour votre communication visuelle',
       features: [
         'Identité visuelle complète',
@@ -199,7 +199,7 @@ export function PricingPage() {
                     : 'text-gray-400 hover:text-white'
                 }`}
               >
-                Sites WordPress
+                Sites web
               </button>
               <button
                 onClick={() => setActiveTab('design')}
@@ -291,16 +291,16 @@ export function PricingPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="mb-4 text-white">Services complémentaires WordPress</h2>
+            <h2 className="mb-4 text-white">Services complémentaires web</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Options et services additionnels pour enrichir et maintenir votre projet WordPress
+              Options et services additionnels pour enrichir et maintenir votre projet web
             </p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               { 
                 title: 'Maintenance WordPress', 
-                price: 'À partir de 50$/mois', 
+                priceCAD: 'À partir de 50$ CAD/mois', 
                 items: [
                   'Mises à jour WordPress et plugins',
                   'Sauvegardes automatiques quotidiennes',
@@ -312,7 +312,7 @@ export function PricingPage() {
               },
               { 
                 title: 'Rédaction de contenu SEO', 
-                price: '80$ - 150$/page', 
+                priceCAD: '80$ - 150$ CAD/page', 
                 items: [
                   'Rédaction optimisée pour le SEO',
                   'Recherche de mots-clés ciblés',
@@ -324,7 +324,7 @@ export function PricingPage() {
               },
               { 
                 title: 'Transfert d\'hébergement vers Cursiva', 
-                price: '200$ - 500$', 
+                priceCAD: '200$ - 500$ CAD', 
                 items: [
                   'Migration complète de votre site',
                   'Transfert de base de données',
@@ -334,29 +334,31 @@ export function PricingPage() {
                   'Support post-migration 1 mois'
                 ], 
               },
-            ].map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="glass p-6 rounded-xl hover:glass-strong transition-all group relative"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-500 opacity-0 group-hover:opacity-10 rounded-xl transition-opacity"></div>
-                <h3 className="mb-3 text-transparent bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text relative z-10">{service.title}</h3>
-                <div className="text-white mb-4 relative z-10 font-semibold">{service.price}</div>
-                <ul className="space-y-2 text-gray-400 relative z-10">
-                  {service.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-1" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+            ].map((service, index) => {
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{ y: -5 }}
+                  className="glass p-6 rounded-xl hover:glass-strong transition-all group relative"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-500 opacity-0 group-hover:opacity-10 rounded-xl transition-opacity"></div>
+                  <h3 className="mb-3 text-transparent bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text relative z-10">{service.title}</h3>
+                  <div className="text-white mb-4 relative z-10 font-semibold">{service.priceCAD}</div>
+                  <ul className="space-y-2 text-gray-400 relative z-10">
+                    {service.items.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-1" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -376,7 +378,7 @@ export function PricingPage() {
                 Questions fréquentes
               </h2>
               <p className="text-gray-400">
-                Tout ce que vous devez savoir sur nos services WordPress et design graphique
+                Tout ce que vous devez savoir sur nos services web et design graphique
               </p>
             </motion.div>
             <div className="grid md:grid-cols-2 gap-6">
@@ -386,12 +388,12 @@ export function PricingPage() {
                   a: 'Les délais varient selon la complexité : 1 semaine pour un site 1 page, 2-3 semaines pour 1-3 pages, et 4-6 semaines pour un site 4-7 pages. Pour les projets sur mesure, nous établissons un calendrier personnalisé.',
                 },
                 {
-                  q: 'Puis-je modifier mon site WordPress après la livraison ?',
-                  a: 'Absolument ! Nous vous formons à la gestion de WordPress pour que vous puissiez faire des modifications vous-même. Nous proposons aussi des services de maintenance et support technique si nécessaire.',
+                  q: 'Puis-je modifier mon site après la livraison ?',
+                  a: 'Absolument ! Nous vous formons à la gestion de votre site pour que vous puissiez faire des modifications vous-même. Nous proposons aussi des services de maintenance et support technique si nécessaire.',
                 },
                 {
                   q: 'Le référencement SEO est-il inclus ?',
-                  a: 'Oui, tous nos sites WordPress incluent une optimisation SEO avec Yoast SEO (balises meta, structure, vitesse de chargement). Nous proposons aussi du référencement avancé et de la rédaction SEO sur devis.',
+                  a: 'Oui, tous nos sites incluent une optimisation SEO (balises meta, structure, vitesse de chargement). Nous proposons aussi du référencement avancé et de la rédaction SEO sur devis.',
                 },
                 {
                   q: 'Est-ce que l\'hébergement et le nom de domaine sont inclus ?',
@@ -442,10 +444,10 @@ export function PricingPage() {
             
             <div className="relative z-10">
               <h2 className="mb-4 text-white">
-                Démarrez votre projet WordPress dès aujourd'hui
+                Démarrez votre projet web dès aujourd'hui
               </h2>
               <p className="mb-8 text-white/90 max-w-2xl mx-auto">
-                Contactez-nous pour obtenir un devis personnalisé gratuit. Nous répondons sous 24h et sommes disponibles pour discuter de votre projet WordPress ou graphique.
+                Contactez-nous pour obtenir un devis personnalisé gratuit. Nous répondons sous 24h et sommes disponibles pour discuter de votre projet web ou graphique.
               </p>
               <Link
                 to="/contact"

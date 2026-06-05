@@ -1,0 +1,23 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient circle -->
+  <circle cx="256" cy="256" r="256" fill="url(#gradient)"/>
+  
+  <!-- Letter C stylized -->
+  <path d="M356 256C356 311.228 311.228 356 256 356C200.772 356 156 311.228 156 256C156 200.772 200.772 156 256 156C281.5 156 304.5 165 322 180" 
+        stroke="white" 
+        stroke-width="45" 
+        stroke-linecap="round"
+        fill="none"/>
+  
+  <!-- Small accent dot -->
+  <circle cx="340" cy="180" r="20" fill="white" opacity="0.9"/>
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0891b2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>

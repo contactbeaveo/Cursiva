@@ -8,6 +8,7 @@ export function ContactPage() {
     email: '',
     phone: '',
     service: 'site-web',
+    wordpress: 'oui',
     budget: '1000-3000',
     message: '',
   });
@@ -65,6 +66,7 @@ export function ContactPage() {
               email: '',
               phone: '',
               service: 'site-web',
+              wordpress: 'oui',
               budget: '1000-3000',
               message: '',
             });
@@ -129,10 +131,10 @@ export function ContactPage() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="mb-8 bg-gradient-to-r from-white via-cyan-300 to-purple-300 bg-clip-text text-transparent">
-              Contactez notre agence WordPress Québec
+              Contactez notre agence web au Québec
             </h1>
             <p className="text-gray-300 max-w-3xl mx-auto">
-              Vous avez un projet de site WordPress, boutique WooCommerce ou design graphique ? Parlons-en ! Remplissez le formulaire ci-dessous et obtenez un devis gratuit sous 24h avec des tarifs transparents pour votre projet web au Québec.
+              Vous avez un projet de site web, boutique en ligne ou design graphique ? Parlons-en ! Remplissez le formulaire ci-dessous et obtenez un devis gratuit sous 24h avec des tarifs transparents pour votre projet web au Québec.
             </p>
           </motion.div>
         </div>
@@ -289,13 +291,33 @@ export function ContactPage() {
                         required
                         className="w-full px-4 py-3 glass-light border border-white/10 rounded-xl focus:border-cyan-400 focus:outline-none text-white [&>option]:bg-gray-800 [&>option]:text-white"
                       >
-                        <option value="site-web">Site web WordPress</option>
-                        <option value="ecommerce">Boutique WooCommerce</option>
+                        <option value="site-web">Site web</option>
+                        <option value="ecommerce">Boutique en ligne / E-commerce</option>
                         <option value="design">Design graphique</option>
                         <option value="seo">SEO / Référencement</option>
-                        <option value="maintenance">Maintenance WordPress</option>
+                        <option value="maintenance">Maintenance de site web</option>
                         <option value="autre">Autre</option>
                       </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="wordpress" className="block mb-2 text-gray-300">
+                        Souhaitez-vous un site WordPress ?
+                      </label>
+                      <select
+                        id="wordpress"
+                        name="wordpress"
+                        value={formData.wordpress}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 glass-light border border-white/10 rounded-xl focus:border-cyan-400 focus:outline-none text-white [&>option]:bg-gray-800 [&>option]:text-white"
+                      >
+                        <option value="oui">Oui, avec WordPress</option>
+                        <option value="non">Non, sans WordPress</option>
+                        <option value="indifferent">Indifférent / À discuter</option>
+                      </select>
+                      <p className="text-gray-500 text-sm mt-2">
+                        WordPress n'est pas obligatoire. Nous pouvons créer votre site avec ou sans WordPress selon vos besoins.
+                      </p>
                     </div>
 
                     <div>
@@ -310,10 +332,10 @@ export function ContactPage() {
                         required
                         className="w-full px-4 py-3 glass-light border border-white/10 rounded-xl focus:border-cyan-400 focus:outline-none text-white [&>option]:bg-gray-800 [&>option]:text-white"
                       >
-                        <option value="500-1000">500$ - 1 000$</option>
-                        <option value="1000-3000">1 000$ - 3 000$</option>
-                        <option value="3000-6000">3 000$ - 6 000$</option>
-                        <option value="6000+">6 000$+</option>
+                        <option value="300-900">$300 - $900</option>
+                        <option value="1000-3000">$1000 - $3000</option>
+                        <option value="3000-6000">$3000 - $6000</option>
+                        <option value="6000+">$6000+</option>
                         <option value="non-defini">Non défini</option>
                       </select>
                     </div>

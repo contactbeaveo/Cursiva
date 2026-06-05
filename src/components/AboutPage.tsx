@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { Target, Heart, Award, Users, Zap, Shield, ArrowRight, Rocket, Code, Palette } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { motion } from 'motion/react';
@@ -62,13 +62,13 @@ export function AboutPage() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="mb-8 bg-gradient-to-r from-white via-cyan-300 to-purple-300 bg-clip-text text-transparent">
-                Agence WordPress et design graphique Cursiva au Québec
+                Agence web et design graphique Cursiva au Québec
               </h1>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Parce que chaque entreprise mérite d'être vue. Cursiva est une agence web spécialisée dans la création de sites WordPress professionnels et le design graphique au Québec. Notre mission est de donner vie à vos idées et de propulser votre présence en ligne avec des solutions web sur mesure.
+                Parce que chaque entreprise mérite d'être vue. Cursiva est une agence web spécialisée dans la création de sites web professionnels et le design graphique au Québec. Notre mission est de donner vie à vos idées et de propulser votre présence en ligne avec des solutions web sur mesure.
               </p>
               <p className="text-gray-300 mb-8 leading-relaxed">
-                Nous combinons expertise technique WordPress, sens créatif et approche stratégique pour créer des expériences digitales qui captivent votre audience et font grandir votre entreprise québécoise.
+                Nous combinons expertise technique en développement web, sens créatif et approche stratégique pour créer des expériences digitales qui captivent votre audience et font grandir votre entreprise québécoise.
               </p>
               <Link
                 to="/contact"
@@ -141,7 +141,7 @@ export function AboutPage() {
                 Chez Cursiva, nous croyons que chaque entreprise a une histoire unique à raconter. Notre mission est de transformer cette histoire en une présence digitale puissante et engageante.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                Nous nous spécialisons dans la création de sites web WordPress professionnels et le design graphique sur mesure. Chaque projet est une opportunité de créer quelque chose d'exceptionnel qui reflète l'identité de marque de nos clients et répond aux besoins de leur audience.
+                Nous nous spécialisons dans la création de sites web professionnels et le design graphique sur mesure. Chaque projet est une opportunité de créer quelque chose d'exceptionnel qui reflète l'identité de marque de nos clients et répond aux besoins de leur audience.
               </p>
             </motion.div>
           </div>
@@ -206,7 +206,7 @@ export function AboutPage() {
             {[
               { step: '01', title: 'Découverte', description: 'Analyse approfondie de vos besoins, objectifs et vision pour comprendre votre projet', icon: <Target className="w-6 h-6" /> },
               { step: '02', title: 'Conception', description: 'Design créatif et maquettes qui reflètent votre identité de marque unique', icon: <Palette className="w-6 h-6" /> },
-              { step: '03', title: 'Développement', description: 'Développement WordPress professionnel et intégration de toutes les fonctionnalités', icon: <Code className="w-6 h-6" /> },
+              { step: '03', title: 'Développement', description: 'Développement professionnel et intégration de toutes les fonctionnalités', icon: <Code className="w-6 h-6" /> },
               { step: '04', title: 'Lancement', description: 'Mise en ligne du site, formation complète et support technique post-lancement', icon: <Rocket className="w-6 h-6" /> },
             ].map((process, index) => (
               <motion.div

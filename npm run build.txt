@@ -1,0 +1,6 @@
+cd ~/public_html
+unzip -o build.zip
+
+cd ~/public_html
+cp -r build/* .
+ls -la

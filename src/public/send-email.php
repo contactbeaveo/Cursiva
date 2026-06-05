@@ -50,7 +50,7 @@ $serviceLabel = $serviceLabels[$service] ?? $service;
 
 // Labels des budgets
 $budgetLabels = [
-    '500-1000' => '500$ - 1 000$ CAD',
+    '300-900' => '300$ - 900$ CAD',
     '1000-3000' => '1 000$ - 3 000$ CAD',
     '3000-6000' => '3 000$ - 6 000$ CAD',
     '6000+' => '6 000$+ CAD',
