@@ -1,15 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Cursiva (copie)</title>
-    </head>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
-  
+    <!-- SEO Primary -->
+    <title>Cursiva – Agence Web & Design Graphique au Québec</title>
+    <meta name="description" content="Agence web québécoise spécialisée en création de sites web professionnels et design graphique. Devis gratuit sous 24h. Sites vitrine, boutiques en ligne, logos. Tarifs de 300$ à 6000$ CAD." />
+    <meta name="keywords" content="agence web Québec, création site web Québec, design graphique Québec, site vitrine, boutique en ligne, WordPress, SEO Québec, logo professionnel" />
+    <meta name="author" content="Cursiva" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://cursiva-agence.netlify.app/" />
+
+    <!-- Theme color (mobile browser bar) -->
+    <meta name="theme-color" content="#06b6d4" />
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cursiva-agence.netlify.app/" />
+    <meta property="og:title" content="Cursiva – Agence Web & Design Graphique au Québec" />
+    <meta property="og:description" content="Création de sites web professionnels et design graphique au Québec. Devis gratuit sous 24h." />
+    <meta property="og:image" content="https://cursiva-agence.netlify.app/og-image.jpg" />
+    <meta property="og:locale" content="fr_CA" />
+    <meta property="og:site_name" content="Cursiva" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cursiva – Agence Web & Design Graphique au Québec" />
+    <meta name="twitter:description" content="Création de sites web professionnels et design graphique au Québec. Devis gratuit sous 24h." />
+    <meta name="twitter:image" content="https://cursiva-agence.netlify.app/og-image.jpg" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Netlify Forms detection (hidden) -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="service" />
+      <input type="text" name="wordpress" />
+      <input type="text" name="budget" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

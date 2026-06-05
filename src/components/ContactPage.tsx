@@ -34,51 +34,38 @@ export function ContactPage() {
     generateCaptcha();
   }, []);
 
+  const encode = (data: Record<string, string>) =>
+    Object.keys(data)
+      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Verify captcha
+
     if (parseInt(captchaAnswer) !== captchaQuestion.answer) {
       setCaptchaError(true);
       return;
     }
-    
-    // Send email via PHP backend
+
     setIsSubmitting(true);
     setSubmitError('');
-    
-    fetch('/send-email.php', {
+
+    fetch('/', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...formData }),
     })
-      .then((response) => response.json())
-      .then((data) => {
+      .then(() => {
         setIsSubmitting(false);
-        if (data.success) {
-          setIsSubmitted(true);
-          setTimeout(() => {
-            setIsSubmitted(false);
-            setFormData({
-              name: '',
-              email: '',
-              phone: '',
-              service: 'site-web',
-              wordpress: 'oui',
-              budget: '1000-3000',
-              message: '',
-            });
-            generateCaptcha();
-          }, 5000);
-        } else {
-          setSubmitError(data.message || 'Erreur lors de l\'envoi. Veuillez réessayer.');
-        }
+        setIsSubmitted(true);
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({ name: '', email: '', phone: '', service: 'site-web', wordpress: 'oui', budget: '1000-3000', message: '' });
+          generateCaptcha();
+        }, 5000);
       })
-      .catch((error) => {
+      .catch(() => {
         setIsSubmitting(false);
-        console.error('Error:', error);
         setSubmitError('Erreur de connexion. Veuillez vérifier votre connexion internet.');
       });
   };
