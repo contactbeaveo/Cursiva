@@ -34,11 +34,6 @@ export function ContactPage() {
     generateCaptcha();
   }, []);
 
-  const encode = (data: Record<string, string>) =>
-    Object.keys(data)
-      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&');
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -50,23 +45,31 @@ export function ContactPage() {
     setIsSubmitting(true);
     setSubmitError('');
 
+    const params = new URLSearchParams();
+    params.append('form-name', 'contact');
+    Object.entries(formData).forEach(([key, value]) => params.append(key, value));
+
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...formData }),
+      body: params.toString(),
     })
-      .then(() => {
+      .then((response) => {
         setIsSubmitting(false);
-        setIsSubmitted(true);
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setFormData({ name: '', email: '', phone: '', service: 'site-web', wordpress: 'oui', budget: '1000-3000', message: '' });
-          generateCaptcha();
-        }, 5000);
+        if (response.ok || response.redirected) {
+          setIsSubmitted(true);
+          setTimeout(() => {
+            setIsSubmitted(false);
+            setFormData({ name: '', email: '', phone: '', service: 'site-web', wordpress: 'oui', budget: '1000-3000', message: '' });
+            generateCaptcha();
+          }, 5000);
+        } else {
+          setSubmitError(`Erreur lors de l'envoi (${response.status}). Réessayez ou contactez-nous par email.`);
+        }
       })
-      .catch(() => {
+      .catch((err) => {
         setIsSubmitting(false);
-        setSubmitError('Erreur de connexion. Veuillez vérifier votre connexion internet.');
+        setSubmitError(`Erreur réseau : ${err.message || 'Veuillez réessayer.'}`);
       });
   };
 
